@@ -1,6 +1,3 @@
-FROM ubuntu:14.04
-RUN echo "contianer is running successfully"
-RUN apt-get update
-RUN apt-get install -y openssh-server
-ENTRYPOINT ["python"]
-CMD ["--version"]
+FROM mcr.microsoft.com/windows/servercore:20H2 AS PS
+SHELL ["powershell"]
+RUN Write-Host "Hello from docker! Today is $(Get-Date)"
